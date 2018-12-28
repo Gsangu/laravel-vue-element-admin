@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import { fetchList, deleteArticle, batchUpdateArticle, sitemap } from '@/api/article'
+import { fetchList, deleteArticle, batchUpdateArticle } from '@/api/article'
 import { mapGetters } from 'vuex'
 import Sticky from '@/components/Sticky' // 粘性header组件
 
@@ -146,27 +146,6 @@ export default {
     if (this.$store.state.user.list.length === 0) { this.getUserList() }
   },
   methods: {
-    sitemap() {
-      this.loading = true
-      sitemap().then(response => {
-        if (response.data.err) {
-          this.$message({
-            message: response.data.err,
-            type: 'error'
-          })
-        } else {
-          this.$notify({
-            title: '成功',
-            type: 'success',
-            duration: 2000,
-            message: '生成Sitemap成功!'
-          })
-        }
-        this.loading = false
-      }).catch(err => {
-        console.log(err)
-      })
-    },
     getCategoryList() {
       this.$store.dispatch('GetCategoryList')
     },
