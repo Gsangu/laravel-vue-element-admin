@@ -25,16 +25,18 @@ $api->version('v1', [
       $api->post('logout', 'UserController@logout');
     });
 
-    $api->group(['middleware' => ['refresh.token', 'role:admin'], 'prefix' => 'user'], function ($api) {
+    $api->group(['middleware' => ['refresh.token'], 'prefix' => 'user'], function ($api) {
       $api->post('info', 'UserController@info');
-      $api->post('search', 'UserController@search');
-      $api->get('list', 'UserController@getList');
-      $api->get('detail', 'UserController@getUser');
-      $api->post('update', 'UserController@updateUser');
-      $api->post('create', 'UserController@createUser');
-      $api->get('check-email', 'UserController@checkEmail');
-      $api->post('delete', 'UserController@deleteUser');
-      $api->get('all', 'UserController@userAll');
+      $api->group(['middleware' => 'role:admin'], function ($api) {
+        $api->post('search', 'UserController@search');
+        $api->get('list', 'UserController@getList');
+        $api->get('detail', 'UserController@getUser');
+        $api->post('update', 'UserController@updateUser');
+        $api->post('create', 'UserController@createUser');
+        $api->get('check-email', 'UserController@checkEmail');
+        $api->post('delete', 'UserController@deleteUser');
+        $api->get('all', 'UserController@userAll');
+      });
     });
 
     $api->group(['middleware' => 'refresh.token', 'prefix' => 'message'], function ($api) {
