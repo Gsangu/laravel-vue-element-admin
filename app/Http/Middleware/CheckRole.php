@@ -22,13 +22,16 @@ class CheckRole extends BaseMiddleware
     if (!isset($user['roles'])) {
       throw new UnauthorizedHttpException('jwt-auth', '登录失效');
     }
-    $roles = explode('|', $role);
-    foreach ($roles as $role) {
-      if (!in_array($role, $user['roles']['data'])) {
-        $this->saveSystemLogs($request);
-        return $next($request);
+    if ($role) {
+      $roles = explode('|', $role);
+      foreach ($roles as $role) {
+        if (!in_array($role, $user['roles']['data'])) {
+          $this->saveSystemLogs($request);
+          return $next($request);
+        }
       }
     }
+
     return response()->json(['err' => '权限不足']);
   }
 
