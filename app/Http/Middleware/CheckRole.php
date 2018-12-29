@@ -23,6 +23,7 @@ class CheckRole extends BaseMiddleware
       throw new UnauthorizedHttpException('jwt-auth', '登录失效');
     }
     if (!$role) {
+      $this->saveSystemLogs($request);
       $next($request);
     }
     $roles = explode('|', $role);
