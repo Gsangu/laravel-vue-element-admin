@@ -1,6 +1,30 @@
 export default {
   route: {
     dashboard: '首页',
+    school: '校内资源管理',
+    studentList: '学生信息管理',
+    teacherList: '教师信息管理',
+    collegeList: '院系信息管理',
+    practice: '顶岗实习信息',
+    manage: '信息管理/导出',
+    company: '校企合作企业',
+    instructor: '企业指导教师',
+    practiceList: '顶岗实习信息',
+    dataCount: '数据统计',
+    workSiteCount: '就业区域统计',
+    clock: '打卡管理',
+    clockCheck: '打卡审核',
+    clockCount: '打卡统计',
+    clockRemind: '打卡提醒',
+    clockConfig: '配置打卡',
+    wageCount: '薪酬区间统计',
+    majorCount: '专业相关统计',
+    wageAvgCount: '薪酬平均统计',
+    scoreCount: '成绩统计',
+    scoreCheck: '资格审查',
+    scoreMake: '成绩生成',
+    analysis: '分析和诊断',
+    studentWarn: '问题学生预警',
     article: '文章管理',
     createArticle: '添加文章',
     editArticle: '编辑文章',
@@ -15,8 +39,8 @@ export default {
     Users: '用户管理',
     User: '个人中心',
     UserList: '用户列表',
-    MessageList: '所有留言',
-    Messages: '留言管理',
+    MessageList: '所有反馈',
+    Messages: '系统反馈',
     FieldList: '字段列表'
   },
   navbar: {
@@ -29,5 +53,11 @@ export default {
     logIn: '登录',
     email: '邮箱',
     password: '密码'
+  },
+  tagsView: {
+    refresh: '刷新',
+    close: '关闭',
+    closeOthers: '关闭其它',
+    closeAll: '关闭所有'
   }
 }

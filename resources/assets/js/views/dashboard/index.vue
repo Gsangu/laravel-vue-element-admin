@@ -29,6 +29,7 @@ export default {
   },
   created() {
     if (this.$store.state.user.defaultPass) {
+      console.log(this.$store.state.user.defaultPass)
       this.$notify({
         message: '您正在使用默认密码，请及时修改密码！',
         type: 'warning',

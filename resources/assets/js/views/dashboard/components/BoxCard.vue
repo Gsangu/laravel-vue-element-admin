@@ -12,17 +12,17 @@
         <el-row :span="24">
           <el-col :span="7">
             <router-link to="/article/create">
-              <el-button style="width:100%" type="primary" plain >添加文章</el-button>
+              <el-button size="mini" style="width:100%" type="primary" plain >添加文章</el-button>
             </router-link>
           </el-col>
           <el-col :span="7" :offset="1">
             <router-link to="/user/info">
-              <el-button style="width:100%" type="success" plain >个人中心</el-button>
+              <el-button size="mini" style="width:100%" type="success" plain >个人中心</el-button>
             </router-link>
           </el-col>
           <el-col :span="7" :offset="1">
             <router-link to="/message/list">
-              <el-button style="width:100%" type="info" plain >留言列表</el-button>
+              <el-button size="mini" style="width:100%" type="info" plain >留言列表</el-button>
             </router-link>
           </el-col>
         </el-row>

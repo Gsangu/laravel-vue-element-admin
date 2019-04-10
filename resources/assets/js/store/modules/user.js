@@ -64,8 +64,10 @@ const user = {
       return new Promise((resolve, reject) => {
         login(email, userInfo.password).then(response => {
           const data = response.data
-          setToken(data.token)
-          commit('SET_TOKEN', data.token)
+          console.log(data)
+          const token = data.token
+          setToken(token)
+          commit('SET_TOKEN', token)
           resolve()
         }).catch(error => {
           reject(error)
